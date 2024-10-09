@@ -39,6 +39,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Home", "Panitia", "Pendaftaran", "Penda
 
 with tab1:
     st.header("Tentang Kunjungan LDK Nasional")
+    st.write("## JS gass ke Unair dan UB besok :rocket::rocket:")
     st.write("Kunjungan LDKN merupakan salah satu kegiatan Departemen Jaringan dan Kerjasama yang di mana dilakukan dalam rangka mempererat silaturahmi antar Lembaga dengan berkunjung ke Lembaga lain untuk saling bertukar informasi seputar strategi yang dilakukan lembaga, metode, kaderisasi dan lain-lain yang bermanfaat untuk kemajuan lembaga serta memahami bagaimana struktur atau kondisi umum lembaga yang bisa diambil dan diterapkan di lembaganya.")
     st.write("Tujuan LDKN itu sendiri yaitu untuk memperluas relasi antar lembaga, mengetahui struktur dan mekanisme Lembaga serta mendiskusikan langkah-langkah yang dapat diambil untuk meningkatkan produktivitas dan efisiensi yang baik dan bisa diterapkan di internal Jama’ah Shalahuddin UGM.")
 
