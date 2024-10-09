@@ -30,7 +30,7 @@ data2 = data2.reset_index(drop=True)  # Reset index terlebih dahulu
 data2.index = data2.index + 1         # Mengubah index menjadi mulai dari 1
 
 st.write('''
-# Selamat Datang :sunglasses:
+# :sunglasses: Selamat Datang :sunglasses:
 ### di Laman Departemen Jaksa :smile:
 mari bermuhasabah diri, meluruskan niat, ikhlaskan pikiran, dan berusaha menjadi hamba yang baik untuk Allah SWT
 ''')
