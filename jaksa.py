@@ -24,7 +24,8 @@ data = data.reset_index(drop=True)  # Reset index terlebih dahulu
 data.index = data.index + 1         # Mengubah index menjadi mulai dari 1
 
 st.write('''
-# Selamat Datang di Laman Departemen Jaringan dan Kerjasama
+# Selamat Datang
+### di Laman Departemen Jaringan dan Kerjasama
 mari bermuhasabah diri, meluruskan niat, ikhlaskan pikiran, dan berusaha menjadi hamba yang baik untuk Allah SWT
 ''')
 
