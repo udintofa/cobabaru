@@ -10,6 +10,12 @@ def load_data(url):
     data = conn.read(spreadsheet=url, usecols=[1, 2, 3, 5, 9])
     return data
 
+# Fungsi untuk membaca data dari Google Sheets
+def load_data2(url):
+    conn = st.connection("gsheets", type=GSheetsConnection)
+    data = conn.read(spreadsheet=url, usecols=[1, 2, 5, 9, 10])
+    return data
+
 # URL Google Sheets
 url = 'https://docs.google.com/spreadsheets/d/1tU0OByLfC0ISXWk2OAhknPnrpSeOX2GtaZFG0DWjwvc/edit?usp=sharing'
 url2 = 'https://docs.google.com/spreadsheets/d/1gC_9B9rcl5F9Cx12AMyD-HPeXmyPrYk8o-ey6RxSbMg/edit?usp=sharing'
@@ -17,7 +23,7 @@ url2 = 'https://docs.google.com/spreadsheets/d/1gC_9B9rcl5F9Cx12AMyD-HPeXmyPrYk8
 # Memuat dan menampilkan data
 
 data = load_data(url)
-data2 = load_data(url2)
+data2 = load_data2(url2)
 data["Angkatan masuk JS"] = data["Angkatan masuk JS"].astype(str)
 data2["Angkatan masuk JS"] = data2["Angkatan masuk JS"].astype(str)
 
