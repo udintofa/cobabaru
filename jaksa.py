@@ -12,15 +12,22 @@ def load_data(url):
 
 # URL Google Sheets
 url = 'https://docs.google.com/spreadsheets/d/1tU0OByLfC0ISXWk2OAhknPnrpSeOX2GtaZFG0DWjwvc/edit?usp=sharing'
+url2 = 'https://docs.google.com/spreadsheets/d/1gC_9B9rcl5F9Cx12AMyD-HPeXmyPrYk8o-ey6RxSbMg/edit?usp=sharing'
     
 # Memuat dan menampilkan data
 
 data = load_data(url)
+data2 = load_data(url2)
 data["Angkatan masuk JS"] = data["Angkatan masuk JS"].astype(str)
+data2["Angkatan masuk JS"] = data2["Angkatan masuk JS"].astype(str)
 
 # Menggunakan reset_index dan mulai indeks dari 1
 data = data.reset_index(drop=True)  # Reset index terlebih dahulu
 data.index = data.index + 1         # Mengubah index menjadi mulai dari 1
+
+# Menggunakan reset_index dan mulai indeks dari 1
+data2 = data2.reset_index(drop=True)  # Reset index terlebih dahulu
+data2.index = data2.index + 1         # Mengubah index menjadi mulai dari 1
 
 st.write('''
 # Selamat Datang :sunglasses:
@@ -62,3 +69,7 @@ with tab4:
 with tab5:
     st.header("Pendaftar yang diterima menjadi peserta")
     st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta")
+     # Tombol refresh data tanpa st.experimental_rerun
+    if st.button("Refresh Data"):
+        st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
+    st.dataframe(data2)
