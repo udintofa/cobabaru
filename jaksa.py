@@ -37,7 +37,7 @@ with tab1:
 
 with tab2:
     st.header("Panitia Kunjungan LDK Nasional")
-    data_diri = [["Penanggung Jawab","Muchammad Udin Mustofa"], ['Ketua Pelaksana',"Ahmad Haidar Rasyid"],["Sekretaris","Yesyaila Albani Alfath"],["Perlengkapan", "Auva Bima Ahada"],["Konsumsi","Siapa ya"]]
+    data_diri = [["Penanggung Jawab","Muchammad Udin Mustofa"], ['Ketua Pelaksana',"Ahmad Haidar Rasyid"],["Sekretaris","Yesyailla Abzani Alfath"],["Perlengkapan", "Auva Bima Ahada"],["Konsumsi","Siapa ya"]]
     dd = pd.DataFrame(data_diri)
     st.write(dd)
 
