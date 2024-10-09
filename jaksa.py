@@ -23,12 +23,18 @@ data["Angkatan masuk JS"] = data["Angkatan masuk JS"].astype(str)
 data = data.reset_index(drop=True)  # Reset index terlebih dahulu
 data.index = data.index + 1         # Mengubah index menjadi mulai dari 1
 
+st.write('''
+#Selamat Datang di Laman Departemen Jaringan dan Kerjasama
+mari bermuhasabah diri, meluruskan niat, ikhlaskan pikiran, dan berusaha menjadi hamba yang baik untuk Allah SWT
+''')
+
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Home", "Panitia", "Pendaftaran", "Pendaftar", "Peserta"])
 
 with tab1:
     st.header("Tentang Kunjungan LDK Nasional")
-    st.write("Kunjungan Lembaga Dakwah Kampus Nasional merupakan kegiatan rutinan jaksa, amin")
-    
+    st.write("Kunjungan LDKN merupakan salah satu kegiatan Departemen Jaringan dan Kerjasama yang di mana dilakukan dalam rangka mempererat silaturahmi antar Lembaga dengan berkunjung ke Lembaga lain untuk saling bertukar informasi seputar strategi yang dilakukan lembaga, metode, kaderisasi dan lain-lain yang bermanfaat untuk kemajuan lembaga serta memahami bagaimana struktur atau kondisi umum lembaga yang bisa diambil dan diterapkan di lembaganya.")
+    st.write("Tujuan LDKN itu sendiri yaitu untuk memperluas relasi antar lembaga, mengetahui struktur dan mekanisme Lembaga serta mendiskusikan langkah-langkah yang dapat diambil untuk meningkatkan produktivitas dan efisiensi yang baik dan bisa diterapkan di internal Jama’ah Shalahuddin UGM.")
+
 with tab2:
     st.header("Panitia Kunjungan LDK Nasional")
     data_diri = [["Nama","Muchammad Udin Mustofa"], ['Panggilan',"Udin"],["Tempat Lahir","Magelang"],["Tanggal Lahir",pd.to_datetime("2003-07-20")],["Alamat","Magelang"]]
