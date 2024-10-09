@@ -7,7 +7,7 @@ import numpy as np
 # Fungsi untuk membaca data dari Google Sheets
 def load_data(url):
     conn = st.connection("gsheets", type=GSheetsConnection)
-    data = conn.read(spreadsheet=url, usecols=[1, 2, 3, 4, 5])
+    data = conn.read(spreadsheet=url, usecols=[1, 2, 3, 5, 9])
     return data
 
 # URL Google Sheets
@@ -16,7 +16,6 @@ url = 'https://docs.google.com/spreadsheets/d/1tU0OByLfC0ISXWk2OAhknPnrpSeOX2Gta
 # Memuat dan menampilkan data
 
 data = load_data(url)
-data["Angkatan UGM"] = data["Angkatan UGM"].astype(str)
 data["Angkatan masuk JS"] = data["Angkatan masuk JS"].astype(str)
 
 # Menggunakan reset_index dan mulai indeks dari 1
