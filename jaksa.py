@@ -41,7 +41,7 @@ st.write('''
 mari bermuhasabah diri, meluruskan niat, ikhlaskan pikiran, dan berusaha menjadi hamba yang baik untuk Allah SWT
 ''')
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Home", "Panitia", "Pendaftaran", "Pendaftar", "Peserta"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Home", "Panitia", "Pendaftaran", "Peserta", "Gambaran Kegiatan"])
 
 with tab1:
     st.header("Tentang Kunjungan LDK Nasional")
@@ -71,6 +71,7 @@ with tab3:
         st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
     st.dataframe(data)
 
+with tab4:
     st.header("Pendaftar yang diterima menjadi peserta")
     st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta (kuota peserta 50 mahasiswa)")
     # Tombol refresh data tanpa st.experimental_rerun
@@ -78,10 +79,6 @@ with tab3:
         st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
      # Tombol refresh data tanpa st.experimental_rerun
     st.dataframe(data2)
-
-with tab4:
-    st.header("Pembayaran")
-    st.write("Berikut panduan pembayaran")
 
 
 with tab5:
