@@ -59,7 +59,6 @@ with tab2:
         ['Perlengkapan', 'Diva Aisya'],
         ['Media','Arif Taufik'],
         ['Acara', 'Fathiya Al-Khansa'],
-        ['Acara', 'Eka Setiawan'],
         
     ]
     dd = pd.DataFrame(data_diri)
