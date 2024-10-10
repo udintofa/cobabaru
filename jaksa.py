@@ -75,7 +75,7 @@ with tab4:
     
 with tab5:
     st.header("Pendaftar yang diterima menjadi peserta")
-    st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta")
+    st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta (kuota peserta 50 mahasiswa)")
     # Tombol refresh data tanpa st.experimental_rerun
     if st.button("Refresh  Data"):
         st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
