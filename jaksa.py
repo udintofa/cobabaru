@@ -41,7 +41,7 @@ st.write('''
 mari bermuhasabah diri, meluruskan niat, ikhlaskan pikiran, dan berusaha menjadi hamba yang baik untuk Allah SWT
 ''')
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Home", "Panitia", "Pendaftaran", "Pendaftar", "Peserta"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Home", "Panitia", "Pendaftaran", "Pendaftar", "Peserta", "Gambaran Kegiatan"])
 
 with tab1:
     st.header("Tentang Kunjungan LDK Nasional")
@@ -81,3 +81,14 @@ with tab5:
         st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
      # Tombol refresh data tanpa st.experimental_rerun
     st.dataframe(data2)
+
+with tab6:
+    st.header("Gambaran Kegiatan")
+    st.write("Kegiatan diawali dengan memperkenalkan masing-masing LDK, dilanjutkan dengan sharing-sharing antar LDK. Rundown kegiatan adalah sebagai berikut:")
+    rd = [
+            ["Penanggung Jawab","Muchammad Udin Mustofa"],
+            ['Ketua Pelaksana',"Ahmad Haidar Rasyid"],
+         ]
+    rundown = pd.DataFrame(rd)
+    st.write(rundown)
+
