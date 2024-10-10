@@ -56,11 +56,10 @@ with tab2:
         ['Ketua Pelaksana',"Ahmad Haidar Rasyid"],
         ["Sekbend","Yesyailla Abzani Alfath"],
         ["Perlengkapan", "Auva Bima Ahada"],
+        ['Perlengkapan', 'Diva Aisya'],
         ['Media','Arif Taufik'],
-        ["Konsumsi","Nauval Ghaniya"],
         ['Acara', 'Fathiya Al-Khansa'],
         ['Acara', 'Eka Setiawan'],
-        ['Acara', 'Diva Aisya'],
         
     ]
     dd = pd.DataFrame(data_diri)
