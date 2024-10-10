@@ -85,6 +85,9 @@ with tab3:
 with tab4:
     st.header("Pembayaran")
     st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayarak ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH.")
+    st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
+    st.markdown("[Ihwan](http://wa.me/+6285727318940))
+    st.markdown("[Akhwat](http://wa.me/+6287732661779))
     st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta (kuota peserta 50 mahasiswa)")
     # Tombol refresh data tanpa st.experimental_rerun
     if st.button("Refresh  Data"):
