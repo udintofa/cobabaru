@@ -83,6 +83,8 @@ with tab3:
     st.dataframe(data)
 
 with tab4:
+    st.header("Pembayaran")
+    st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayarak ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH.
     st.header("Pendaftar yang diterima menjadi peserta")
     st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta (kuota peserta 50 mahasiswa)")
     # Tombol refresh data tanpa st.experimental_rerun
