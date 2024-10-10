@@ -105,6 +105,6 @@ with tab5:
             ['21.00-03.00', 6, 'Perjalanan ke Yogyakarta', 'Jalan'],
         ]
     # Menambahkan nama kolom saat membuat DataFrame
-    rundown = pd.DataFrame(rd, columns=['Waktu', 'Durasi', 'Kegiatan', 'Lokasi'])
+    rundown = pd.DataFrame(rd, columns=['Waktu', 'Durasi (jam)', 'Kegiatan', 'Lokasi'])
     st.write(rundown)
 
