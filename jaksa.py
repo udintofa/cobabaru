@@ -51,7 +51,18 @@ with tab1:
 
 with tab2:
     st.header("Panitia Kunjungan LDK Nasional")
-    data_diri = [["Penanggung Jawab","Muchammad Udin Mustofa"], ['Ketua Pelaksana',"Ahmad Haidar Rasyid"],["Sekretaris","Yesyailla Abzani Alfath"],["Perlengkapan", "Auva Bima Ahada"],["Konsumsi","Siapa ya"]]
+    data_diri = [
+        ["Penanggung Jawab","Muchammad Udin Mustofa"],
+        ['Ketua Pelaksana',"Ahmad Haidar Rasyid"],
+        ["Sekbend","Yesyailla Abzani Alfath"],
+        ["Perlengkapan", "Auva Bima Ahada"],
+        ['Media','Arif Taufik'],
+        ["Konsumsi","Nauval Ghaniya"],
+        ['Acara', 'Fathiya Al-Khansa'],
+        ['Acara', 'Eka Setiawan'],
+        ['Acara', 'Diva Aisya'],
+        
+    ]
     dd = pd.DataFrame(data_diri)
     st.write(dd)
 
