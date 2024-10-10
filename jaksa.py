@@ -82,7 +82,8 @@ with tab3:
 
 with tab4:
     st.header("Pembayaran")
-    st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayarak ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH.")
+    st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayaran sebesar Rp225.ooo ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH.")
+    st.write("Dana iuran akan digunakan untuk membayar administrasi seperti sewa bus, bayar tol, serta konsumsi peserta.")
     st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
     st.markdown("[Ihwan](http://wa.me/+6285727318940)")
     st.markdown("[Akhwat](http://wa.me/+6287732661779)")
