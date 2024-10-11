@@ -10,7 +10,11 @@ st.set_page_config(
     page_icon=":rocket:",
     layout="wide",
     initial_sidebar_state="auto",
-    menu_items=None)
+    menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    })
 
 # Fungsi untuk membaca data dari Google Sheets
 def load_data(url):
