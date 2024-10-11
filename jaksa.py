@@ -4,6 +4,9 @@ import time
 import pandas as pd
 import numpy as np
 
+#title page
+st.set_page_config(page_title="Kunjungan LDKN", page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
+
 # Fungsi untuk membaca data dari Google Sheets
 def load_data(url):
     conn = st.connection("gsheets", type=GSheetsConnection)
