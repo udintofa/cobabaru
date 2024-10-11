@@ -10,9 +10,7 @@ st.set_page_config(
     page_icon=":rocket:",
     layout="wide",
     initial_sidebar_state="auto",
-    menu_items={
-        'Developer': 'https://wa.me/6285702759481'
-    })
+    menu_items=None)
 
 # Fungsi untuk membaca data dari Google Sheets
 def load_data(url):
