@@ -12,6 +12,13 @@ st.set_page_config(
     initial_sidebar_state="auto",
     menu_items=None)
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            <style>            
+"""
+
 # Fungsi untuk membaca data dari Google Sheets
 def load_data(url):
     conn = st.connection("gsheets", type=GSheetsConnection)
@@ -130,4 +137,3 @@ with tab5:
     # Menambahkan nama kolom saat membuat DataFrame
     rundown = pd.DataFrame(rd, columns=['Waktu', 'Durasi (jam)', 'Kegiatan', 'Lokasi'])
     st.write(rundown)
-
