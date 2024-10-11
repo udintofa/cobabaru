@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto",
     menu_items={
-        'Developer': 'https://wa.me/6285702759481',
+        'Developer': 'https://wa.me/6285702759481'
     })
 
 # Fungsi untuk membaca data dari Google Sheets
