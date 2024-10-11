@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 #title page
-st.set_page_config(page_title="Kunjungan LDKN", page_icon=":rocket:", layout="wide", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Kunjungan LDKN", page_icon=":rocket:", layout="wide", initial_sidebar_state="expanded", menu_items=None)
 
 # Fungsi untuk membaca data dari Google Sheets
 def load_data(url):
