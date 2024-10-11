@@ -8,7 +8,7 @@ import numpy as np
 st.set_page_config(
     page_title="Kunjungan LDKN",
     page_icon=":rocket:",
-    layout="wide",
+    layout="centered",
     initial_sidebar_state="auto",
     menu_items=None)
 
