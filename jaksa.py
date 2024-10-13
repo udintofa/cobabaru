@@ -28,7 +28,7 @@ def load_data(url):
 # Fungsi untuk membaca data dari Google Sheets
 def load_data2(url):
     conn = st.connection("gsheets", type=GSheetsConnection)
-    data = conn.read(spreadsheet=url, usecols=[1, 2, 5, 9, 10])
+    data = conn.read(spreadsheet=url, usecols=[1, 2, 5, 9, 11])
     return data
 
 # URL Google Sheets
