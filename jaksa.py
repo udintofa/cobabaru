@@ -106,7 +106,7 @@ with tab3:
     st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
     st.markdown("[Ihwan](http://wa.me/+6285727318940)")
     st.markdown("[Akhwat](http://wa.me/+6287732661779)")
-    st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta (kuota peserta 50 mahasiswa dengan masing-masing unit selain Departemen Jaksa diberi kuota 4 peserta yang akan diseleksi setelah penutupan pendaftaran)")
+    st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta. Kuota peserta 50 mahasiswa dengan masing-masing unit selain Departemen Jaksa diberi kuota 4 peserta yang akan diseleksi setelah penutupan pendaftaran")
     # Tombol refresh data tanpa st.experimental_rerun
     if st.button("Refresh_Data"):
         st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
