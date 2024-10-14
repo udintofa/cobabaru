@@ -148,8 +148,8 @@ with tab5:
             ['07.00-08.00', 1, 'Perjalanan ke Lokasi Kunjungan', 'Jalan'],
             ['08.00-14.00', 6, 'Acara Kunjungan dg LDK UAKI UB + makan siang', 'UB'],
             ['14.00-15.00', 1, 'Jalan-jalan Tour Kampus UB', 'UB'],
-            ['15.00-16.00', 1, 'Perjalanan ke wisata & oleh', 'Jalan'],
-            ['16.00-21.00', 5, 'Main-main di Wisata dan Oleh-oleh', 'Wisata'],
+            ['15.00-16.00', 1, 'Perjalanan ke Kota Batu', 'Jalan'],
+            ['16.00-21.00', 5, 'Main-main di Kota Batu dan beli Oleh-oleh', 'Wisata'],
             ['21.00-03.00', 6, 'Perjalanan ke Yogyakarta', 'Jalan'],
         ]
     # Menambahkan nama kolom saat membuat DataFrame
