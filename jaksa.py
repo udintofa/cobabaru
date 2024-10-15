@@ -56,7 +56,7 @@ st.write('''
 mari bermuhasabah diri, meluruskan niat, ikhlaskan pikiran, dan berusaha menjadi hamba yang baik untuk Allah SWT
 ''')
 
-tab1, tab3, tab5, tab6 = st.tabs(["Home", "Daftar & Bayar", "Kegiatan", "Keperluan"])
+tab1, tab3, tab5, tab6 = st.tabs(["Home", "Pendaftaran", "Kegiatan", "Keperluan"])
 
 with tab1:
     st.header("Tentang Kunjungan LDK Nasional")
@@ -83,6 +83,7 @@ with tab1:
     dd.index = dd.index + 1         # Mengubah index menjadi mulai dari 1
     st.write(dd)
 
+
 with tab3:
     st.header("Pendaftaran")
     st.write("Silahkan daftar untuk menjadi peserta LDK Nasional melalui tautan dibawah")
@@ -93,25 +94,35 @@ with tab3:
         """
     )
 
-    st.write("Berikut merupakan daftar pendaftar yang sudah mendaftar")
-    # Tombol refresh data tanpa st.experimental_rerun
-    if st.button("Refresh Data"):
-        st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
-    st.dataframe(data)
+# with tab3:
+#     st.header("Pendaftaran")
+#     st.write("Silahkan daftar untuk menjadi peserta LDK Nasional melalui tautan dibawah")
+#     # Menambahkan hyperlink
+#     st.markdown(
+#         """
+#         [Daftar Sekarang](https://docs.google.com/forms/d/e/1FAIpQLSdrODYr9QwUqe2_a5o0o6Jd1oem8ktC1j7oY1UGTGwu9PYVhA/viewform?usp=sf_link)
+#         """
+#     )
 
-    st.header("Pembayaran")
-    st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayaran sebesar Rp225.ooo ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH."+
-            " Bagi peserta yang dalam 1 pekan setelah ditetapkan menjadi peserta belum membayar akan dibatalkan menjadi peserta dan akan digantikan oleh pendaftar lain. Bagi yang ada kendala bisa hubungi cp yang ada.")
-    st.write("Dana iuran akan digunakan untuk membayar administrasi seperti sewa bus, bayar tol, serta konsumsi peserta.")
-    st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
-    st.markdown("[Ihwan](http://wa.me/+6285727318940)")
-    st.markdown("[Akhwat](http://wa.me/+6287732661779)")
-    st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta. Kuota peserta 50 mahasiswa dengan masing-masing unit selain Departemen Jaksa diberi kuota 4 peserta yang akan diseleksi setelah penutupan pendaftaran")
-    # Tombol refresh data tanpa st.experimental_rerun
-    if st.button("Refresh_Data"):
-        st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
-     # Tombol refresh data tanpa st.experimental_rerun
-    st.dataframe(data2)
+#     st.write("Berikut merupakan daftar pendaftar yang sudah mendaftar")
+#     # Tombol refresh data tanpa st.experimental_rerun
+#     if st.button("Refresh Data"):
+#         st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
+#     st.dataframe(data)
+
+#     st.header("Pembayaran")
+#     st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayaran sebesar Rp225.ooo ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH."+
+#             " Bagi peserta yang dalam 1 pekan setelah ditetapkan menjadi peserta belum membayar akan dibatalkan menjadi peserta dan akan digantikan oleh pendaftar lain. Bagi yang ada kendala bisa hubungi cp yang ada.")
+#     st.write("Dana iuran akan digunakan untuk membayar administrasi seperti sewa bus, bayar tol, serta konsumsi peserta.")
+#     st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
+#     st.markdown("[Ihwan](http://wa.me/+6285727318940)")
+#     st.markdown("[Akhwat](http://wa.me/+6287732661779)")
+#     st.write("Berikut merupakan daftar pendaftar yang diterima menjadi peserta. Kuota peserta 50 mahasiswa dengan masing-masing unit selain Departemen Jaksa diberi kuota 4 peserta yang akan diseleksi setelah penutupan pendaftaran")
+#     # Tombol refresh data tanpa st.experimental_rerun
+#     if st.button("Refresh_Data"):
+#         st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
+#      # Tombol refresh data tanpa st.experimental_rerun
+#     st.dataframe(data2)
 
 # with tab4:
 #     st.header("Pembayaran")
