@@ -86,13 +86,14 @@ with tab1:
 
 with tab3:
     st.header("Pendaftaran")
-    st.write("Silahkan daftar untuk menjadi peserta LDK Nasional melalui tautan dibawah")
+    st.write("Mohon maaf, pendaftaran peserta LDK Nasional sudah ditutup")
+    # st.write("Silahkan daftar untuk menjadi peserta LDK Nasional melalui tautan dibawah")
     # Menambahkan hyperlink
-    st.markdown(
-        """
-        [Daftar Sekarang](https://docs.google.com/forms/d/e/1FAIpQLSdrODYr9QwUqe2_a5o0o6Jd1oem8ktC1j7oY1UGTGwu9PYVhA/viewform?usp=sf_link)
-        """
-    )
+    # st.markdown(
+    #     """
+    #     [Daftar Sekarang](https://docs.google.com/forms/d/e/1FAIpQLSdrODYr9QwUqe2_a5o0o6Jd1oem8ktC1j7oY1UGTGwu9PYVhA/viewform?usp=sf_link)
+    #     """
+    # )
 
 # with tab3:
 #     st.header("Pendaftaran")
