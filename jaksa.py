@@ -3,6 +3,8 @@ from streamlit_gsheets import GSheetsConnection
 import time
 import pandas as pd
 import numpy as np
+import datetime
+import time
 
 #title page
 st.set_page_config(
@@ -88,18 +90,33 @@ with tab3:
     st.header("Pembayaran")
     st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayaran sebesar Rp225.ooo ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH."+
             " Pembayaran dilakukan paling lambat pada 25 Oktober 2024 pukul 23.59. Bagi yang ada kendala bisa hubungi cp yang ada.")
+    
     from datetime import datetime
-
-    # Tanggal tujuan
     deadline = datetime(2024, 10, 25, 23, 59, 0)
-    sekarang = datetime.now()
-    selisih = deadline - sekarang
-    hari = selisih.days
-    detik_sisa = selisih.seconds
-    jam = detik_sisa // 3600
-    menit = (detik_sisa % 3600) // 60
-    detik = detik_sisa % 60
-    st.write(f"Waktu sisa pembayaran: {hari} hari, {jam} jam, {menit} menit, {detik} detik")
+    while True:
+        # Tanggal saat ini
+        sekarang = datetime.now()
+        
+        # Menghitung selisih waktu
+        selisih = deadline - sekarang
+        
+        # Jika deadline sudah tercapai atau lewat
+        if selisih.total_seconds() <= 0:
+            print("Deadline sudah tercapai!")
+            break
+        
+        # Mendapatkan jumlah hari, jam, menit, dan detik dari selisih
+        hari = selisih.days
+        detik_sisa = selisih.seconds
+        jam = detik_sisa // 3600
+        menit = (detik_sisa % 3600) // 60
+        detik = detik_sisa % 60
+    
+        # Membersihkan output terminal
+        st.write(f"Waktu sisa pembayaran: {hari} hari, {jam} jam, {menit} menit, {detik} detik")
+    
+        # Menunggu 1 detik sebelum update lagi
+        time.sleep(1)
 
     st.write("Dana iuran akan digunakan untuk membayar administrasi seperti sewa bus, bayar tol, serta konsumsi peserta.")
     st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
