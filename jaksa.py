@@ -85,6 +85,13 @@ with tab1:
 
 
 with tab3:
+    st.header("Pembayaran")
+    st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayaran sebesar Rp225.ooo ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH."+
+            " Bagi peserta yang dalam 1 pekan setelah ditetapkan menjadi peserta belum membayar akan dibatalkan menjadi peserta dan akan digantikan oleh pendaftar lain. Bagi yang ada kendala bisa hubungi cp yang ada.")
+    st.write("Dana iuran akan digunakan untuk membayar administrasi seperti sewa bus, bayar tol, serta konsumsi peserta.")
+    st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
+    st.markdown("[Ihwan](http://wa.me/+6285727318940)")
+    st.markdown("[Akhwat](http://wa.me/+6287732661779)")
     st.header("Peserta")
     st.write("Berikut daftar peserta kunjungan LDK Nasional")
     # Tombol refresh data tanpa st.experimental_rerun
