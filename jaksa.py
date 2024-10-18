@@ -56,7 +56,7 @@ st.write('''
 mari bermuhasabah diri, meluruskan niat, ikhlaskan pikiran, dan berusaha menjadi hamba yang baik untuk Allah SWT
 ''')
 
-tab1, tab3, tab5, tab6 = st.tabs(["Home", "Pendaftaran", "Kegiatan", "Keperluan"])
+tab1, tab3, tab5, tab6 = st.tabs(["Home", "Peserta", "Kegiatan", "Keperluan"])
 
 with tab1:
     st.header("Tentang Kunjungan LDK Nasional")
