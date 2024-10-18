@@ -88,6 +88,23 @@ with tab3:
     st.header("Pembayaran")
     st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayaran sebesar Rp225.ooo ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH."+
             " Pembayaran dilakukan paling lambat pada 25 Oktober 2024 pukul 23.59. Bagi yang ada kendala bisa hubungi cp yang ada.")
+    from datetime import datetime
+
+    # Tanggal tujuan
+    deadline = datetime(2024, 10, 25, 23, 59, 0)
+    # Tanggal saat ini
+    sekarang = datetime.now()
+    # Menghitung selisih waktu
+    selisih = deadline - sekarang
+    # Mendapatkan jumlah hari, jam, menit, dan detik dari selisih
+    hari = selisih.days
+    detik_sisa = selisih.seconds
+    jam = detik_sisa // 3600
+    menit = (detik_sisa % 3600) // 60
+    detik = detik_sisa % 60
+    # Menampilkan hasil countdown
+    print(f"Countdown: {hari} hari, {jam} jam, {menit} menit, {detik} detik")
+
     st.write("Dana iuran akan digunakan untuk membayar administrasi seperti sewa bus, bayar tol, serta konsumsi peserta.")
     st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
     st.markdown("[Ihwan](http://wa.me/+6285727318940)")
