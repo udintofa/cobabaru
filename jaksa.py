@@ -92,18 +92,14 @@ with tab3:
 
     # Tanggal tujuan
     deadline = datetime(2024, 10, 25, 23, 59, 0)
-    # Tanggal saat ini
     sekarang = datetime.now()
-    # Menghitung selisih waktu
     selisih = deadline - sekarang
-    # Mendapatkan jumlah hari, jam, menit, dan detik dari selisih
-    hari = selisih.days
+    hari = selisih.
     detik_sisa = selisih.seconds
     jam = detik_sisa // 3600
     menit = (detik_sisa % 3600) // 60
     detik = detik_sisa % 60
-    # Menampilkan hasil countdown
-    st.write(f"Countdown: {hari} hari, {jam} jam, {menit} menit, {detik} detik")
+    st.write(f"Waktu sisa pembayaran: {hari} hari, {jam} jam, {menit} menit, {detik} detik")
 
     st.write("Dana iuran akan digunakan untuk membayar administrasi seperti sewa bus, bayar tol, serta konsumsi peserta.")
     st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
