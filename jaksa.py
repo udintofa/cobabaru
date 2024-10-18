@@ -94,7 +94,7 @@ with tab3:
     deadline = datetime(2024, 10, 25, 23, 59, 0)
     sekarang = datetime.now()
     selisih = deadline - sekarang
-    hari = selisih.
+    hari = selisih.days
     detik_sisa = selisih.seconds
     jam = detik_sisa // 3600
     menit = (detik_sisa % 3600) // 60
