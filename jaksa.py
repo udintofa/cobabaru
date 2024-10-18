@@ -103,7 +103,7 @@ with tab3:
     menit = (detik_sisa % 3600) // 60
     detik = detik_sisa % 60
     # Menampilkan hasil countdown
-    print(f"Countdown: {hari} hari, {jam} jam, {menit} menit, {detik} detik")
+    st.write(f"Countdown: {hari} hari, {jam} jam, {menit} menit, {detik} detik")
 
     st.write("Dana iuran akan digunakan untuk membayar administrasi seperti sewa bus, bayar tol, serta konsumsi peserta.")
     st.write("Bagi yang telah membayar, silahkan konfirmasi ke:")
