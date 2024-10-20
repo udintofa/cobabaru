@@ -36,13 +36,16 @@ def load_data2(url):
 # URL Google Sheets
 url = 'https://docs.google.com/spreadsheets/d/1tU0OByLfC0ISXWk2OAhknPnrpSeOX2GtaZFG0DWjwvc/edit?usp=sharing'
 url2 = 'https://docs.google.com/spreadsheets/d/1gC_9B9rcl5F9Cx12AMyD-HPeXmyPrYk8o-ey6RxSbMg/edit?usp=sharing'
+url3 = 'https://docs.google.com/spreadsheets/d/1IG6p-mV0beuyKncItIqwnJ57zD42R9-kHKXGsXxcDQQ/edit?usp=sharing'
     
 # Memuat dan menampilkan data
 
 data = load_data(url)
 data2 = load_data2(url2)
+data3 = load_data(url3)
 data["Angkatan masuk JS"] = data["Angkatan masuk JS"].astype(str)
 data2["Angkatan masuk JS"] = data2["Angkatan masuk JS"].astype(str)
+data3["Angkatan masuk JS"] = data3["Angkatan masuk JS"].astype(str)
 
 # Menggunakan reset_index dan mulai indeks dari 1
 data = data.reset_index(drop=True)  # Reset index terlebih dahulu
@@ -51,6 +54,10 @@ data.index = data.index + 1         # Mengubah index menjadi mulai dari 1
 # Menggunakan reset_index dan mulai indeks dari 1
 data2 = data2.reset_index(drop=True)  # Reset index terlebih dahulu
 data2.index = data2.index + 1         # Mengubah index menjadi mulai dari 1
+
+# Menggunakan reset_index dan mulai indeks dari 1
+data3 = data3.reset_index(drop=True)  # Reset index terlebih dahulu
+data3.index = data3.index + 1         # Mengubah index menjadi mulai dari 1
 
 st.write('''
 # :raised_hand_with_fingers_splayed: Selamat Datang :raised_hand_with_fingers_splayed:
@@ -90,6 +97,7 @@ with tab3:
     st.header("Pembayaran")
     st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayaran sebesar Rp225.ooo ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH."+
             " Pembayaran dilakukan paling lambat pada 25 Oktober 2024 pukul 23.59. Bagi yang ada kendala bisa hubungi cp yang ada.")
+    st.write("Jika setelah tgl 25 Oktober 2024 peserta tidak melakukan pembayaran tanpa konfirmasi ke CP yang ada, maka peserta akan digantikan oleh waiting list yang ingin juga mengikuti kegiatan ini.")
     
     # from datetime import datetime
     # deadline = datetime(2024, 10, 25, 23, 59, 0)
@@ -135,6 +143,10 @@ with tab3:
     #     [Daftar Sekarang](https://docs.google.com/forms/d/e/1FAIpQLSdrODYr9QwUqe2_a5o0o6Jd1oem8ktC1j7oY1UGTGwu9PYVhA/viewform?usp=sf_link)
     #     """
     # )
+    st.header("Waiting List")
+    if st.button("Refresh  Data"):
+        st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
+    st.dataframe(data3)
 
 # with tab3:
 #     st.header("Pendaftaran")
