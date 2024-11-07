@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import time
+import os
 
 #title page
 st.set_page_config(
@@ -288,10 +289,14 @@ with tab1:
     )
 
     st.subheader("War Seat Bus")
-    import os
+    # Tentukan folder tempat file akan disimpan (misalnya di folder 'data' dalam aplikasi)
+    folder_path = 'data'
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
     
-    # Nama file CSV tempat data akan disimpan
-    csv_file = 'data_kursi.csv'
+    # Nama file CSV
+    csv_file = os.path.join(folder_path, 'data_kursi.csv')
+    
     
     # Cek apakah file CSV sudah ada
     if not os.path.exists(csv_file):
