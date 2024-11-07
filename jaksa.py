@@ -241,4 +241,13 @@ with tab1:
                 st.success("Data berhasil disimpan, Semoga mendapatkan tempat duduk terbaik yaa. Maaf kalau panitia banyak salah!")
             else:
                 st.error("Kolom wajib harus diisi!")
+
+    '''
+    st.subheader("Playlist Perjalanan")
+    with st.expander("Berikut Usulan Playlist Sementara"):
+        
+
+
+
+    '''
     
