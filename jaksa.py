@@ -172,8 +172,6 @@ with tab4:
     
     st.subheader("Playlist Perjalanan")
     with st.expander("Silahkan Usul Playlist Sementara"):
-        st.write('coming soon')
-
         # Input Nama
         judul_lagu = st.text_input("Judul Lagu (wajib diisi):")
         penyanyi = st.text_input("Penyanyi (wajib diisi):")
