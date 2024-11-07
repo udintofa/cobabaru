@@ -307,16 +307,17 @@ with tab1:
     
     # Judul dan form input
     st.subheader("Form Pemilihan Kursi Duduk")
-    
-    # Input nama
-    nama = st.text_input("Nama:")
-    
-    # Pilihan kursi duduk
-    kursi_1 = st.text_input("Kursi Duduk Pilihan 1:")
-    kursi_2 = st.text_input("Kursi Duduk Pilihan 2:")
-    kursi_3 = st.text_input("Kursi Duduk Pilihan 3:")
-    kursi_4 = st.text_input("Kursi Duduk Pilihan 4:")
-    kursi_5 = st.text_input("Kursi Duduk Pilihan 5:")
+
+    with st.expander("Isi form"):
+        # Input nama
+        nama = st.text_input("Nama:")
+        
+        # Pilihan kursi duduk
+        kursi_1 = st.text_input("Kursi Duduk Pilihan 1:")
+        kursi_2 = st.text_input("Kursi Duduk Pilihan 2:")
+        kursi_3 = st.text_input("Kursi Duduk Pilihan 3:")
+        kursi_4 = st.text_input("Kursi Duduk Pilihan 4:")
+        kursi_5 = st.text_input("Kursi Duduk Pilihan 5:")
     
     # Tombol untuk menyimpan data
     if st.button("Simpan"):
