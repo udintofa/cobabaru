@@ -40,16 +40,24 @@ def load_data2(url):
     data = conn.read(spreadsheet=url, usecols=[1, 2, 5, 9, 11])
     return data
 
+# Fungsi untuk membaca data dari Google Sheets
+def load_data3(url):
+    conn = st.connection("gsheets", type=GSheetsConnection)
+    data = conn.read(spreadsheet=url, usecols=[0, 1, 2, 3])
+    return data
+
 # URL Google Sheets
 url = 'https://docs.google.com/spreadsheets/d/1tU0OByLfC0ISXWk2OAhknPnrpSeOX2GtaZFG0DWjwvc/edit?usp=sharing'
 url2 = 'https://docs.google.com/spreadsheets/d/1gC_9B9rcl5F9Cx12AMyD-HPeXmyPrYk8o-ey6RxSbMg/edit?usp=sharing'
 url3 = 'https://docs.google.com/spreadsheets/d/1IG6p-mV0beuyKncItIqwnJ57zD42R9-kHKXGsXxcDQQ/edit?usp=sharing'
+url4 = 'https://docs.google.com/spreadsheets/d/1xU6jreaeo1Fh1CfP-jf6avwJUhxqiFNxHG65NJC6-Yw/edit?usp=sharing'
     
 # Memuat dan menampilkan data
 
 data = load_data(url)
 data2 = load_data2(url2)
 data3 = load_data(url3)
+data4 = load_data3(url4)
 data["Angkatan masuk JS"] = data["Angkatan masuk JS"].astype(str)
 data2["Angkatan masuk JS"] = data2["Angkatan masuk JS"].astype(str)
 data3["Angkatan masuk JS"] = data3["Angkatan masuk JS"].astype(str)
@@ -65,6 +73,10 @@ data2.index = data2.index + 1         # Mengubah index menjadi mulai dari 1
 # Menggunakan reset_index dan mulai indeks dari 1
 data3 = data3.reset_index(drop=True)  # Reset index terlebih dahulu
 data3.index = data3.index + 1         # Mengubah index menjadi mulai dari 1
+
+# Menggunakan reset_index dan mulai indeks dari 1
+data4 = data4.reset_index(drop=True)  # Reset index terlebih dahulu
+data4.index = data4.index + 1         # Mengubah index menjadi mulai dari 1
 
 st.write('''
 # :raised_hand_with_fingers_splayed: Selamat Datang :raised_hand_with_fingers_splayed:
@@ -126,6 +138,7 @@ def save_to_google_sheets2(data):
     # Menambahkan data ke Google Sheets
     sheet.append_row(data)
 
+
 # Membuat DataFrame dengan data yang telah didefinisikan
 kegiatan_df = pd.DataFrame(data_kegiatan, columns=["Kegiatan", "Waktu", "Keperluan"])
 
@@ -178,6 +191,8 @@ with tab4:
                 st.success("Data berhasil disimpan. Ingat!! ada yg bilang kalau musik itu haram, maka pilihlah murotal")
             else:
                 st.error("Semua wajib diisi")
+        st.write("List Usulan Sementara")
+        st.dataframe(data4)
         
 
 
