@@ -343,9 +343,6 @@ with tab1:
     st.subheader("Form Pemilihan Kursi Duduk")
 
     with st.expander("Isi form"):
-        import os
-        st.write("Direktori saat ini:", os.getcwd())
-
         # Input Nama
         nama = st.text_input("Nama:")
         
