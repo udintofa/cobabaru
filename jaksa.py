@@ -210,7 +210,7 @@ with tab1:
         st.image("SeatBus.png", caption="Penomoran Kursi Bus")
 
     
-    st.subheader(":fire:War Seat Bus:fire:")
+    st.subheader(":fire: War Seat Bus:fire:")
     # Judul dan form input
     st.write("Form Pemilihan Kursi Duduk")
     with st.expander("WAR SEKARANGGG:fire::fire::fire:"):
