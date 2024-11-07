@@ -65,9 +65,35 @@ st.write('''
 mari bermuhasabah diri, meluruskan niat, ikhlaskan pikiran, dan berusaha menjadi hamba yang baik untuk Allah SWT
 ''')
 
-tab1, tab3, tab5, tab6 = st.tabs(["Home", "Pengumuman Peserta", "Kegiatan", "Keperluan"])
+#dataframe kegiatan
+data_kegiatan = [
+    ["Perjalanan dari UGM ke Surabaya", "19.30-04.00", "Perjalanan"],
+    ["Singgah di Masjid Nasional Al Akbar", "04.00-07.00", "Subuh, mandi, persiapan"],
+    ["Perjalanan menuju Kampus A Unair", "07.00-08.00", "Perjalanan"],
+    ["Kegiatan Kunjungan bersama LDK UKMKI Unair", "08.00-12.00", "Makan (disediakan), Kegiatan kunjungan"],
+    ["Isama", "12.00-13.00", "Dzuhur, Ashar, Makan (disediakan)"],
+    ["Kampus Tour Unair", "13.00-16.00", "Kampus Tour"],
+    ["Isa", "16.00-18.00", "Ashar (bagi yg belum jamak sm zuhur), magrib (sekalian isya)"],
+    ["Perjalanan ke Wisata Kota Lama Surabaya", "18.00-19.00", "Perjalanan"],
+    ["Main di Kota Lama Surabaya", "18.30-23.00", "Isya (bagi yg belum), makan mandiri, main"],
+    ["Perjalanan dari Surabaya ke Malang", "23.00-04.00", "Perjalanan"],
+    ["Singgah di Masjid Kampus Raden Patah UB", "04.00-07.00", "Subuh, mandi, persiapan"],
+    ["Perjalanan menuju lokasi Kegiatan Kunjungan", "07.00-08.00", "Perjalanan"],
+    ["Kegiatan Kunjungan bersama LDK UAKI UB", "08.00-12.00", "Makan (disediakan), Kegiatan Kunjungan"],
+    ["Isama", "12.00-13.00", "Dzuhur sekalian Ashar, makan (disediakan)"],
+    ["Kampus Tour UB", "13.00-15.00", "Kampus Tour"],
+    ["Perjalanan ke Kota Batu", "15.00-16.00", "Perjalanan"],
+    ["Main dan beli oleh-oleh ke Kota Batu Malang", "16.00-21.00", "Magrib, Isya, Main, Beli Oleh-oleh"],
+    ["Perjalanan pulang ke UGM", "21.00-04.00", "Perjalanan"]
+]
 
-with tab1:
+# Membuat DataFrame dengan data yang telah didefinisikan
+kegiatan_df = pd.DataFrame(data_kegiatan, columns=["Kegiatan", "Waktu", "Keperluan"])
+
+
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Informasi", "Pengumuman Peserta", "Kegiatan", "Keperluan", "About"])
+
+with tab5:
     st.header("Tentang Kunjungan LDK Nasional")
     st.write("#### JS gass ke Unair dan UB besok :bus::rocket::bus::rocket:")
     st.image("poster kunjungan.jpg", caption="Poster Kunjungan LDK Nasional")
@@ -93,7 +119,7 @@ with tab1:
     st.write(dd)
 
 
-with tab3:
+with tab2:
     st.header("Pembayaran")
     st.write("Silahkan bagi pendaftar yang sudah menjadi peserta bisa melakukan pembayaran sebesar Rp225.ooo ke rekening Mandiri dengan nomor rekening 1370021364068 atas nama YESYAILLA ABZANI ALFATH."+
             " Pembayaran dilakukan paling lambat pada 25 Oktober 2024 pukul 23.59. Bagi yang ada kendala bisa hubungi cp yang ada.")
@@ -194,7 +220,7 @@ with tab3:
 #     st.dataframe(data2)
 
 
-with tab5:
+with tab3:
     st.header("Kegiatan")
     st.write("Kegiatan diawali dengan memperkenalkan masing-masing LDK, dilanjutkan dengan sharing-sharing antar LDK. Rundown kegiatan adalah sebagai berikut:")
     rd = [
@@ -222,8 +248,7 @@ with tab5:
     st.write(rundown)
 
 
-
-with tab6:
+with tab4:
     st.header("Keperluan Peserta")
     st.write("Berikut merupakan keperluan peserta yang wajib atau diutamakan untuk dibawa:")
     st.write('''
@@ -240,3 +265,11 @@ with tab6:
                 11. Jaket (opsional)
                 12. Peralatan pribadi (opsional)
             ''')
+
+with tab1:
+    st.header("Informasi Untuk Peserta")
+    st.subheader("Rangkaian Kegiatan Kunjungan")
+    with st.expander("Lihat Rangkaian"):
+        st.write("Berikut rangkaian kegiatan selama kunjungan LDK Nasional")
+        st.dataframe(kegiatan_df)
+        
