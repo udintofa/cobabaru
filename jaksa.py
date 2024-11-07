@@ -321,7 +321,7 @@ with tab1:
     st.subheader("War Seat Bus")
     
     # Judul dan form input
-    st.subheader("Form Pemilihan Kursi Duduk")
+    st.write("Form Pemilihan Kursi Duduk")
 
     with st.expander("WAR SEKARANGGG:fire::fire::fire:"):
         sm_siapa = ""
