@@ -187,12 +187,12 @@ with tab4:
 with tab1:
     st.header("Informasi Untuk Peserta")
     
-    st.subheader(":page_facing_up:Rangkaian Kegiatan Kunjungan")
+    st.subheader(":page_facing_up: Rangkaian Kegiatan Kunjungan")
     with st.expander("Lihat Rangkaian"):
         st.write("Berikut rangkaian kegiatan selama kunjungan LDK Nasional")
         st.dataframe(kegiatan_df)
         
-    st.subheader(":warning:Petunjuk Teknis Peserta")
+    st.subheader(":warning: Petunjuk Teknis Peserta")
     # Membaca file PDF sebagai binary
     with open("Juknis LDK Nasional.pdf", "rb") as pdf_file:
         pdf_data = pdf_file.read()
@@ -205,7 +205,7 @@ with tab1:
         mime="application/pdf"
     )
 
-    st.subheader(":bus:Penomoran Kursi Bus")
+    st.subheader(":bus: Penomoran Kursi Bus")
     with st.expander("Penomoran Kursi"):
         st.image("SeatBus.png", caption="Penomoran Kursi Bus")
 
