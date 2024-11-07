@@ -318,11 +318,14 @@ with tab1:
         mime="application/pdf"
     )
 
-    st.subheader("War Seat Bus")
+    st.subheader("Penomoran Kursi Bus")
+    with st.expander("Penomoran Kursi"):
+        st.image("SeatBus.jpg", caption="Penomoran Kursi Bus")
+
     
+    st.subheader("War Seat Bus")
     # Judul dan form input
     st.write("Form Pemilihan Kursi Duduk")
-
     with st.expander("WAR SEKARANGGG:fire::fire::fire:"):
         sm_siapa = ""
         kenapa = ""
