@@ -113,7 +113,7 @@ def authenticate_google_sheets():
 def save_to_google_sheets(data):
     client = authenticate_google_sheets()
     # Membuka Google Sheet berdasarkan nama file
-    sheet = client.open("Data Kursi Duduk").sheet1  # Ganti dengan nama sheet Anda
+    sheet = client.open("FormSeatBus").sheet1  # Ganti dengan nama sheet Anda
     # Menambahkan data ke Google Sheets
     sheet.append_row(data)
 
