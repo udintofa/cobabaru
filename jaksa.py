@@ -171,7 +171,7 @@ with tab4:
     st.write("Berikut merupakan keperluan peserta yang wajib atau diutamakan untuk dibawa:")
     st.write('''
                 1. DC hari pertama yaitu kemeja putih
-                2. DC hari kedua yaitu kemeja batik
+                2. DC hari kedua yaitu kemeja batik (ihwan) dan berkain (akhwat)
                 3. Jas Almamater UGM
                 4. Baju ganti
                 5. Alat Solat
