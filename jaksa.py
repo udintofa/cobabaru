@@ -310,7 +310,7 @@ with tab1:
 
     with st.expander("Isi form"):
         import os
-        print("Direktori saat ini:", os.getcwd())
+        st.write("Direktori saat ini:", os.getcwd())
 
         # Input nama
         nama = st.text_input("Nama:")
