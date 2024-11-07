@@ -290,7 +290,7 @@ with tab1:
 
     st.subheader("War Seat Bus")
     # Tentukan folder tempat file akan disimpan (misalnya di folder 'data' dalam aplikasi)
-    folder_path = 'data'
+    folder_path = '/mount/src/cobabaru'
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
     
