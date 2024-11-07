@@ -192,7 +192,11 @@ with tab4:
             else:
                 st.error("Semua wajib diisi")
         st.write("List Usulan Sementara")
+        # Tombol refresh data tanpa st.experimental_rerun
+        if st.button("Refresh  Data"):
+        st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
         st.dataframe(data4)
+        
         
 
 
