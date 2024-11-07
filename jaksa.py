@@ -319,24 +319,24 @@ with tab1:
         kursi_4 = st.text_input("Kursi Duduk Pilihan 4:")
         kursi_5 = st.text_input("Kursi Duduk Pilihan 5:")
     
-    # Tombol untuk menyimpan data
-    if st.button("Simpan"):
-        if nama and kursi_1 and kursi_2 and kursi_3 and kursi_4 and kursi_5:
-            # Data yang akan disimpan dalam format DataFrame
-            new_data = pd.DataFrame([{
-                "Nama": nama,
-                "Kursi Pilihan 1": kursi_1,
-                "Kursi Pilihan 2": kursi_2,
-                "Kursi Pilihan 3": kursi_3,
-                "Kursi Pilihan 4": kursi_4,
-                "Kursi Pilihan 5": kursi_5
-            }])
-    
-            # Menyimpan data ke CSV
-            save_to_csv(new_data)
-            st.success("Data berhasil disimpan!")
-        else:
-            st.error("Semua kolom harus diisi!")
+        # Tombol untuk menyimpan data
+        if st.button("Simpan"):
+            if nama and kursi_1 and kursi_2 and kursi_3 and kursi_4 and kursi_5:
+                # Data yang akan disimpan dalam format DataFrame
+                new_data = pd.DataFrame([{
+                    "Nama": nama,
+                    "Kursi Pilihan 1": kursi_1,
+                    "Kursi Pilihan 2": kursi_2,
+                    "Kursi Pilihan 3": kursi_3,
+                    "Kursi Pilihan 4": kursi_4,
+                    "Kursi Pilihan 5": kursi_5
+                }])
+        
+                # Menyimpan data ke CSV
+                save_to_csv(new_data)
+                st.success("Data berhasil disimpan!")
+            else:
+                st.error("Semua kolom harus diisi!")
     
         
             
