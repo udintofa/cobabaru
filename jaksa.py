@@ -158,7 +158,7 @@ with tab4:
     st.write(dd)
     
     st.subheader("Playlist Perjalanan")
-    with st.expander("Berikut Usulan Playlist Sementara"):
+    with st.expander("Silahkan Usul Playlist Sementara"):
         st.write('coming soon')
 
         # Input Nama
