@@ -157,27 +157,27 @@ with tab4:
     dd.index = dd.index + 1         # Mengubah index menjadi mulai dari 1
     st.write(dd)
     
-    # st.subheader("Playlist Perjalanan")
-    # with st.expander("Silahkan Usul Playlist Sementara"):
-    #     st.write('coming soon')
+    st.subheader("Playlist Perjalanan")
+    with st.expander("Silahkan Usul Playlist Sementara"):
+        st.write('coming soon')
 
-    #     # Input Nama
-    #     judul_lagu = st.text_input("Judul Lagu (wajib diisi):")
-    #     penyanyi = st.text_input("Penyanyi (wajib diisi):")
-    #     pengusul = st.text_input("Siapa pengusulnya ini?")
+        # Input Nama
+        judul_lagu = st.text_input("Judul Lagu (wajib diisi):")
+        penyanyi = st.text_input("Penyanyi (wajib diisi):")
+        pengusul = st.text_input("Siapa pengusulnya ini?")
         
-    #     # Tombol untuk menyimpan data
-    #     if st.button("Kirim"):
-    #         if judul_lagu and penyanyi and pengusul:
-    #             # Zona waktu Indonesia (WIB)
-    #             tz = pytz.timezone("Asia/Jakarta")
-    #             # Ambil timestamp saat ini
-    #             timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-    #             new_data = [timestamp, judul_lagu, penyanyi, pengusul]
-    #             save_to_google_sheets2(new_data)
-    #             st.success("Data berhasil disimpan. Ingat!! ada yg bilang kalau musik itu haram, maka pilihlah murotal")
-    #         else:
-    #             st.error("Semua wajib diisi")
+        # Tombol untuk menyimpan data
+        if st.button("Kirim"):
+            if judul_lagu and penyanyi and pengusul:
+                # Zona waktu Indonesia (WIB)
+                tz = pytz.timezone("Asia/Jakarta")
+                # Ambil timestamp saat ini
+                timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+                new_data = [timestamp, judul_lagu, penyanyi, pengusul]
+                save_to_google_sheets2(new_data)
+                st.success("Data berhasil disimpan. Ingat!! ada yg bilang kalau musik itu haram, maka pilihlah murotal")
+            else:
+                st.error("Semua wajib diisi")
         
 
 
