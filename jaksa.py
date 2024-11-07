@@ -8,6 +8,7 @@ import time
 import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 import json
 
 #title page
@@ -95,17 +96,14 @@ data_kegiatan = [
 #Menyambung sheet form
 # Fungsi untuk autentikasi ke Google Sheets menggunakan Streamlit Secrets
 def authenticate_google_sheets():
-    # Mengambil kredensial JSON dari Streamlit Secrets
+    # Mengambil kredensial JSON dari Streamlit Secrets (sudah berbentuk dictionary)
     creds_data = st.secrets["gcp_service_account"]
-    
-    # Mengubah data string JSON menjadi dictionary
-    creds_dict = json.loads(creds_data)
     
     # Tentukan scope API yang dibutuhkan
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
     
     # Membuat kredensial dari dictionary JSON
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+    creds = Credentials.from_service_account_info(creds_data, scopes=scope)
     
     # Otentikasi dan membuat client Google Sheets
     client = gspread.authorize(creds)
