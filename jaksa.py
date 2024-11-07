@@ -6,6 +6,9 @@ import numpy as np
 import datetime
 import time
 import os
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import json
 
 #title page
 st.set_page_config(
@@ -21,6 +24,7 @@ hide_st_style = """
             footer {visibility: hidden;}
             <style>            
 """
+
 
 # Fungsi untuk membaca data dari Google Sheets
 def load_data(url):
@@ -87,6 +91,33 @@ data_kegiatan = [
     ["Main dan beli oleh-oleh ke Kota Batu Malang", "16.00-21.00", "Magrib, Isya, Main, Beli Oleh-oleh"],
     ["Perjalanan pulang ke UGM", "21.00-04.00", "Perjalanan"]
 ]
+
+#Menyambung sheet form
+# Fungsi untuk autentikasi ke Google Sheets menggunakan Streamlit Secrets
+def authenticate_google_sheets():
+    # Mengambil kredensial JSON dari Streamlit Secrets
+    creds_data = st.secrets["gcp_service_account"]
+    
+    # Mengubah data string JSON menjadi dictionary
+    creds_dict = json.loads(creds_data)
+    
+    # Tentukan scope API yang dibutuhkan
+    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    
+    # Membuat kredensial dari dictionary JSON
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+    
+    # Otentikasi dan membuat client Google Sheets
+    client = gspread.authorize(creds)
+    return client
+
+# Fungsi untuk menyimpan data ke Google Sheets
+def save_to_google_sheets(data):
+    client = authenticate_google_sheets()
+    # Membuka Google Sheet berdasarkan nama file
+    sheet = client.open("Data Kursi Duduk").sheet1  # Ganti dengan nama sheet Anda
+    # Menambahkan data ke Google Sheets
+    sheet.append_row(data)
 
 # Membuat DataFrame dengan data yang telah didefinisikan
 kegiatan_df = pd.DataFrame(data_kegiatan, columns=["Kegiatan", "Waktu", "Keperluan"])
@@ -317,32 +348,22 @@ with tab1:
         import os
         st.write("Direktori saat ini:", os.getcwd())
 
-        # Input nama
+        # Input Nama
         nama = st.text_input("Nama:")
         
-        # Pilihan kursi duduk
+        # Input Pilihan Kursi Duduk
         kursi_1 = st.text_input("Kursi Duduk Pilihan 1:")
         kursi_2 = st.text_input("Kursi Duduk Pilihan 2:")
         kursi_3 = st.text_input("Kursi Duduk Pilihan 3:")
         kursi_4 = st.text_input("Kursi Duduk Pilihan 4:")
         kursi_5 = st.text_input("Kursi Duduk Pilihan 5:")
-    
+        
         # Tombol untuk menyimpan data
         if st.button("Simpan"):
             if nama and kursi_1 and kursi_2 and kursi_3 and kursi_4 and kursi_5:
-                # Data yang akan disimpan dalam format DataFrame
-                new_data = pd.DataFrame([{
-                    "Nama": nama,
-                    "Kursi Pilihan 1": kursi_1,
-                    "Kursi Pilihan 2": kursi_2,
-                    "Kursi Pilihan 3": kursi_3,
-                    "Kursi Pilihan 4": kursi_4,
-                    "Kursi Pilihan 5": kursi_5
-                }])
-        
-                # Menyimpan data ke CSV
-                save_to_csv(new_data)
-                st.success("Data berhasil disimpan!")
+                new_data = [nama, kursi_1, kursi_2, kursi_3, kursi_4, kursi_5]
+                save_to_google_sheets(new_data)
+                st.success("Data berhasil disimpan ke Google Sheets!")
             else:
                 st.error("Semua kolom harus diisi!")
     
