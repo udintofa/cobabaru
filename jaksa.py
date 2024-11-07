@@ -194,7 +194,7 @@ with tab4:
         st.write("List Usulan Sementara")
         # Tombol refresh data tanpa st.experimental_rerun
         if st.button("Refresh  Data"):
-        st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
+            st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
         st.dataframe(data4)
         
         
