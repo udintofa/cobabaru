@@ -91,7 +91,7 @@ data_kegiatan = [
 kegiatan_df = pd.DataFrame(data_kegiatan, columns=["Kegiatan", "Waktu", "Keperluan"])
 
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Informasi", "Pengumuman Peserta", "Kegiatan", "Keperluan", "About"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Informasi", "Pengumuman Peserta", "Keperluan", "About"])
 
 with tab5:
     st.header("Tentang Kunjungan LDK Nasional")
@@ -220,32 +220,32 @@ with tab2:
 #     st.dataframe(data2)
 
 
-with tab3:
-    st.header("Kegiatan")
-    st.write("Kegiatan diawali dengan memperkenalkan masing-masing LDK, dilanjutkan dengan sharing-sharing antar LDK. Rundown kegiatan adalah sebagai berikut:")
-    rd = [
-            ['19.00-20.00', 1, 'kumpul peserta', 'Sekre'],
-            ['20.00-04.00', 8, 'Perjalanan menuju Surabaya', 'Jalan'],
-            ['04.00-07.00', 3, 'Solat subuh, mandi, dan persiapan', 'Masjid Unair'],
-            ['07.00-08.00', 1, 'Perjalanan ke Lokasi Kunjungan', 'Jalan'],
-            ['08.00-09.00', 1, 'Sarapan pagi', 'Unair'],
-            ['09.00-15.00', 6, 'Acara Kunjungan dg LDK UKMKI Unair', 'Unair'],
-            ['15.00-17.30', 2.5, 'Jalan-jalan Tour Kampus Unair', 'Unair'],
-            ['17.30-19.00', 1.5, 'Salat Magrib dan Isya', 'Unair'],
-            ['19.00-20.00', 1, 'Perjalanan ke Wisata Kota Lama', 'Jalan'],
-            ['20.00-23.59', 4, 'Main-main di Kotalama', 'Kotalama'],
-            ['00.00-04.00', 4, 'Perjalanan ke Kota Malang', 'Jalan'],
-            ['04.00-07.00', 3, 'Solat subuh, mandi, dan persiapan', 'Masjid UB'],
-            ['07.00-08.00', 1, 'Perjalanan ke Lokasi Kunjungan', 'Jalan'],
-            ['08.00-14.00', 6, 'Acara Kunjungan dg LDK UAKI UB + makan siang', 'UB'],
-            ['14.00-15.00', 1, 'Jalan-jalan Tour Kampus UB', 'UB'],
-            ['15.00-16.00', 1, 'Perjalanan ke Kota Batu', 'Jalan'],
-            ['16.00-21.00', 5, 'Main-main di Kota Batu dan beli Oleh-oleh', 'Wisata'],
-            ['21.00-03.00', 6, 'Perjalanan ke Yogyakarta', 'Jalan'],
-        ]
-    # Menambahkan nama kolom saat membuat DataFrame
-    rundown = pd.DataFrame(rd, columns=['Waktu', 'Durasi (jam)', 'Kegiatan', 'Lokasi'])
-    st.write(rundown)
+# with tab3:
+#     st.header("Kegiatan")
+#     st.write("Kegiatan diawali dengan memperkenalkan masing-masing LDK, dilanjutkan dengan sharing-sharing antar LDK. Rundown kegiatan adalah sebagai berikut:")
+#     rd = [
+#             ['19.00-20.00', 1, 'kumpul peserta', 'Sekre'],
+#             ['20.00-04.00', 8, 'Perjalanan menuju Surabaya', 'Jalan'],
+#             ['04.00-07.00', 3, 'Solat subuh, mandi, dan persiapan', 'Masjid Unair'],
+#             ['07.00-08.00', 1, 'Perjalanan ke Lokasi Kunjungan', 'Jalan'],
+#             ['08.00-09.00', 1, 'Sarapan pagi', 'Unair'],
+#             ['09.00-15.00', 6, 'Acara Kunjungan dg LDK UKMKI Unair', 'Unair'],
+#             ['15.00-17.30', 2.5, 'Jalan-jalan Tour Kampus Unair', 'Unair'],
+#             ['17.30-19.00', 1.5, 'Salat Magrib dan Isya', 'Unair'],
+#             ['19.00-20.00', 1, 'Perjalanan ke Wisata Kota Lama', 'Jalan'],
+#             ['20.00-23.59', 4, 'Main-main di Kotalama', 'Kotalama'],
+#             ['00.00-04.00', 4, 'Perjalanan ke Kota Malang', 'Jalan'],
+#             ['04.00-07.00', 3, 'Solat subuh, mandi, dan persiapan', 'Masjid UB'],
+#             ['07.00-08.00', 1, 'Perjalanan ke Lokasi Kunjungan', 'Jalan'],
+#             ['08.00-14.00', 6, 'Acara Kunjungan dg LDK UAKI UB + makan siang', 'UB'],
+#             ['14.00-15.00', 1, 'Jalan-jalan Tour Kampus UB', 'UB'],
+#             ['15.00-16.00', 1, 'Perjalanan ke Kota Batu', 'Jalan'],
+#             ['16.00-21.00', 5, 'Main-main di Kota Batu dan beli Oleh-oleh', 'Wisata'],
+#             ['21.00-03.00', 6, 'Perjalanan ke Yogyakarta', 'Jalan'],
+#         ]
+#     # Menambahkan nama kolom saat membuat DataFrame
+#     rundown = pd.DataFrame(rd, columns=['Waktu', 'Durasi (jam)', 'Kegiatan', 'Lokasi'])
+#     st.write(rundown)
 
 
 with tab4:
