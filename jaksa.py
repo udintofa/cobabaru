@@ -268,10 +268,23 @@ with tab4:
 
 with tab1:
     st.header("Informasi Untuk Peserta")
+    
     st.subheader("Rangkaian Kegiatan Kunjungan")
     with st.expander("Lihat Rangkaian"):
         st.write("Berikut rangkaian kegiatan selama kunjungan LDK Nasional")
         st.dataframe(kegiatan_df)
-    st.subheader("War Perebutan Seat Bus")
+        
+    st.subheader("Petunjuk Teknis Peserta")
+    # Membaca file PDF sebagai binary
+    with open("Juknis LDK Nasional.pdf", "rb") as pdf_file:
+        pdf_data = pdf_file.read()
+    
+    # Tombol untuk mengunduh file PDF
+    st.download_button(
+        label="Unduh File PDF",
+        data=pdf_data,
+        file_name="Juknis LDK Nasional.pdf",
+        mime="application/pdf"
+    )
     
         
