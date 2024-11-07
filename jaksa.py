@@ -320,7 +320,7 @@ with tab1:
 
     st.subheader("Penomoran Kursi Bus")
     with st.expander("Penomoran Kursi"):
-        st.image("SeatBus.jpg", caption="Penomoran Kursi Bus")
+        st.image("SeatBus.png", caption="Penomoran Kursi Bus")
 
     
     st.subheader("War Seat Bus")
