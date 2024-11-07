@@ -272,4 +272,6 @@ with tab1:
     with st.expander("Lihat Rangkaian"):
         st.write("Berikut rangkaian kegiatan selama kunjungan LDK Nasional")
         st.dataframe(kegiatan_df)
+    st.subheader("War Perebutan Seat Bus")
+    
         
