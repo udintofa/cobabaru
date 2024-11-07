@@ -122,9 +122,9 @@ def save_to_google_sheets(data):
 kegiatan_df = pd.DataFrame(data_kegiatan, columns=["Kegiatan", "Waktu", "Keperluan"])
 
 
-tab1, tab2, tab4, tab5 = st.tabs(["Informasi", "Pengumuman Peserta", "Keperluan", "About"])
+tab1, tab2, tab3, tab4 = st.tabs(["Informasi", "Pengumuman Peserta", "Keperluan", "About"])
 
-with tab5:
+with tab4:
     st.header("Tentang Kunjungan LDK Nasional")
     st.write("#### JS gass ke Unair dan UB besok :bus::rocket::bus::rocket:")
     st.image("poster kunjungan.jpg", caption="Poster Kunjungan LDK Nasional")
@@ -148,6 +148,15 @@ with tab5:
     dd = dd.reset_index(drop=True)  # Reset index terlebih dahulu
     dd.index = dd.index + 1         # Mengubah index menjadi mulai dari 1
     st.write(dd)
+    
+    st.subheader("Playlist Perjalanan")
+    with st.expander("Berikut Usulan Playlist Sementara"):
+        
+        
+
+
+
+
 
 
 with tab2:
@@ -166,7 +175,7 @@ with tab2:
         st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
     st.dataframe(data2)
 
-with tab4:
+with tab3:
     st.header("Keperluan Peserta")
     st.write("Berikut merupakan keperluan peserta yang wajib atau diutamakan untuk dibawa:")
     st.write('''
@@ -242,12 +251,4 @@ with tab1:
             else:
                 st.error("Kolom wajib harus diisi!")
 
-    '''
-    st.subheader("Playlist Perjalanan")
-    with st.expander("Berikut Usulan Playlist Sementara"):
-        
-
-
-
-    '''
     
