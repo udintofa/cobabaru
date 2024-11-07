@@ -334,7 +334,7 @@ with tab1:
         kursi_3 = st.selectbox("Kursi Duduk Pilihan 3 (wajid diisi)", [i for i in range(50)])
         kursi_4 = st.selectbox("Kursi Duduk Pilihan 4 (wajid diisi)", [i for i in range(50)])
         kursi_5 = st.selectbox("Kursi Duduk Pilihan 5 (wajid diisi)", [i for i in range(50)])
-        jejer = st.radio("Apakah kamu harus bersebelahan sm temenmu? (wajid diisi)", ["Iya", "Sama siapa aja juga gapapa"]
+        jejer = st.radio("Apakah kamu harus bersebelahan sm temenmu? (wajid diisi)", ["Iya", "Sama siapa aja juga gapapa"])
         sm_siapa = st.text_input("Sama siapa? (Jika pilih Iya di pertanyaan sebelumnya):")
         kenapa = st.text_input("Kenapa harus sm dia? (Jika pilih Iya di pertanyaan sebelumnya)")
         
