@@ -306,7 +306,7 @@ with tab1:
         data.to_csv(csv_file, mode='a', header=False, index=False)
     
     # Judul dan form input
-    st.title("Form Pemilihan Kursi Duduk")
+    st.subheader("Form Pemilihan Kursi Duduk")
     
     # Input nama
     nama = st.text_input("Nama:")
