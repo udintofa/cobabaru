@@ -323,7 +323,7 @@ with tab1:
     # Judul dan form input
     st.subheader("Form Pemilihan Kursi Duduk")
 
-    with st.expander("WAR SEKARANGGG:fire: :fire: :fire:"):
+    with st.expander("WAR SEKARANGGG:fire::fire::fire:"):
         sm_siapa = ""
         kenapa = ""
 
