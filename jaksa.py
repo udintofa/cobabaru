@@ -119,7 +119,7 @@ def save_to_google_sheets(data):
     sheet.append_row(data)
 
 # Fungsi untuk menyimpan data ke Google Sheets Playlist
-def save_to_google_sheets(data):
+def save_to_google_sheets2(data):
     client = authenticate_google_sheets()
     # Membuka Google Sheet berdasarkan nama file
     sheet = client.open("Playlist").sheet1  # Ganti dengan nama sheet Anda
@@ -160,6 +160,24 @@ with tab4:
     st.subheader("Playlist Perjalanan")
     with st.expander("Berikut Usulan Playlist Sementara"):
         st.write('coming soon')
+
+        # Input Nama
+        judul_lagu = st.text_input("Judul Lagu (wajib diisi):")
+        penyanyi = st.text_input("Penyanyi (wajib diisi):")
+        pengusul = st.text_input("Siapa pengusulnya ini?")
+        
+        # Tombol untuk menyimpan data
+        if st.button("Simpan"):
+            if judul_lagu and penyanyi and pengusul:
+                # Zona waktu Indonesia (WIB)
+                tz = pytz.timezone("Asia/Jakarta")
+                # Ambil timestamp saat ini
+                timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+                new_data = [timestamp, judul_lagu, penyanyi, pengusul]
+                save_to_google_sheets2(new_data)
+                st.success("Data berhasil disimpan. Ingat!! ada yg bilang kalau musik itu haram, maka pilihlah murotal")
+            else:
+                st.error("Semua wajib diisi")
         
 
 
@@ -231,14 +249,14 @@ with tab1:
         kenapa = ""
 
         # Input Nama
-        nama = st.text_input("Nama (wajid diisi):")
+        nama = st.text_input("Nama (wajib diisi):")
         # Input Pilihan Kursi Duduk
-        kursi_1 = st.selectbox("Kursi Duduk Pilihan 1 (wajid diisi)", [i for i in range(50)])
-        kursi_2 = st.selectbox("Kursi Duduk Pilihan 2 (wajid diisi)", [i for i in range(50)])
-        kursi_3 = st.selectbox("Kursi Duduk Pilihan 3 (wajid diisi)", [i for i in range(50)])
-        kursi_4 = st.selectbox("Kursi Duduk Pilihan 4 (wajid diisi)", [i for i in range(50)])
-        kursi_5 = st.selectbox("Kursi Duduk Pilihan 5 (wajid diisi)", [i for i in range(50)])
-        jejer = st.radio("Apakah kamu harus bersebelahan sm temenmu? (wajid diisi)", ["Iya", "Sama siapa aja juga gapapa"])
+        kursi_1 = st.selectbox("Kursi Duduk Pilihan 1 (wajib diisi)", [i for i in range(50)])
+        kursi_2 = st.selectbox("Kursi Duduk Pilihan 2 (wajib diisi)", [i for i in range(50)])
+        kursi_3 = st.selectbox("Kursi Duduk Pilihan 3 (wajib diisi)", [i for i in range(50)])
+        kursi_4 = st.selectbox("Kursi Duduk Pilihan 4 (wajib diisi)", [i for i in range(50)])
+        kursi_5 = st.selectbox("Kursi Duduk Pilihan 5 (wajib diisi)", [i for i in range(50)])
+        jejer = st.radio("Apakah kamu harus bersebelahan sm temenmu? (wajib diisi)", ["Iya", "Sama siapa aja juga gapapa"])
         sm_siapa = st.text_input("Sama siapa? (Jika pilih Iya di pertanyaan sebelumnya):")
         kenapa = st.text_input("Kenapa harus sm dia? (Jika pilih Iya di pertanyaan sebelumnya)")
         
