@@ -326,8 +326,6 @@ with tab1:
         sm_siapa = ""
         kenapa = ""
 
-        # Ambil timestamp saat ini
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         # Input Nama
         nama = st.text_input("Nama (wajid diisi):")
         # Input Pilihan Kursi Duduk
@@ -343,6 +341,8 @@ with tab1:
         # Tombol untuk menyimpan data
         if st.button("Simpan"):
             if nama and kursi_1 and kursi_2 and kursi_3 and kursi_4 and kursi_5 and jejer:
+                # Ambil timestamp saat ini
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 new_data = [timestamp, nama, kursi_1, kursi_2, kursi_3, kursi_4, kursi_5, jejer, sm_siapa, kenapa]
                 save_to_google_sheets(new_data)
                 st.success("Data berhasil disimpan, Semoga mendapatkan tempat duduk terbaik yaa. Maaf kalau panitia banyak salah!")
