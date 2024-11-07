@@ -167,7 +167,7 @@ with tab4:
         pengusul = st.text_input("Siapa pengusulnya ini?")
         
         # Tombol untuk menyimpan data
-        if st.button("Simpan"):
+        if st.button("Kirim"):
             if judul_lagu and penyanyi and pengusul:
                 # Zona waktu Indonesia (WIB)
                 tz = pytz.timezone("Asia/Jakarta")
