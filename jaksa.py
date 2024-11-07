@@ -110,11 +110,19 @@ def authenticate_google_sheets():
     client = gspread.authorize(creds)
     return client
 
-# Fungsi untuk menyimpan data ke Google Sheets
+# Fungsi untuk menyimpan data ke Google Sheets Versi War
 def save_to_google_sheets(data):
     client = authenticate_google_sheets()
     # Membuka Google Sheet berdasarkan nama file
     sheet = client.open("FormSeatBus").sheet1  # Ganti dengan nama sheet Anda
+    # Menambahkan data ke Google Sheets
+    sheet.append_row(data)
+
+# Fungsi untuk menyimpan data ke Google Sheets Playlist
+def save_to_google_sheets(data):
+    client = authenticate_google_sheets()
+    # Membuka Google Sheet berdasarkan nama file
+    sheet = client.open("Playlist").sheet1  # Ganti dengan nama sheet Anda
     # Menambahkan data ke Google Sheets
     sheet.append_row(data)
 
@@ -153,11 +161,6 @@ with tab4:
     with st.expander("Berikut Usulan Playlist Sementara"):
         st.write('coming soon')
         
-        
-
-
-
-
 
 
 with tab2:
