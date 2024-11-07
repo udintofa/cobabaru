@@ -200,10 +200,10 @@ with tab2:
     #     [Daftar Sekarang](https://docs.google.com/forms/d/e/1FAIpQLSdrODYr9QwUqe2_a5o0o6Jd1oem8ktC1j7oY1UGTGwu9PYVhA/viewform?usp=sf_link)
     #     """
     # )
-    st.header("Waiting List")
-    if st.button("Refresh Data"):
-        st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
-    st.dataframe(data3)
+    # st.header("Waiting List")
+    # if st.button("Refresh Data"):
+    #     st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
+    # st.dataframe(data3)
 
 # with tab3:
 #     st.header("Pendaftaran")
