@@ -3,7 +3,7 @@ from streamlit_gsheets import GSheetsConnection
 import time
 import pandas as pd
 import numpy as np
-import datetime
+from datetime import datetime
 import time
 import os
 import gspread
