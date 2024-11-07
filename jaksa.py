@@ -347,7 +347,7 @@ with tab1:
         nama = st.text_input("Nama:")
         
         # Input Pilihan Kursi Duduk
-        kursi_1 = st.text_input("Kursi Duduk Pilihan 1:")
+        kursi_1 = st.selectbox("Kursi Duduk Pilihan 1", [i for i in range(50)])
         kursi_2 = st.text_input("Kursi Duduk Pilihan 2:")
         kursi_3 = st.text_input("Kursi Duduk Pilihan 3:")
         kursi_4 = st.text_input("Kursi Duduk Pilihan 4:")
