@@ -286,5 +286,56 @@ with tab1:
         file_name="Juknis LDK Nasional.pdf",
         mime="application/pdf"
     )
+
+    st.subheader("War Seat Bus")
+    import os
+    
+    # Nama file CSV tempat data akan disimpan
+    csv_file = 'data_kursi.csv'
+    
+    # Cek apakah file CSV sudah ada
+    if not os.path.exists(csv_file):
+        # Jika file belum ada, buat file baru dengan header
+        df = pd.DataFrame(columns=["Nama", "Kursi Pilihan 1", "Kursi Pilihan 2", 
+                                   "Kursi Pilihan 3", "Kursi Pilihan 4", "Kursi Pilihan 5"])
+        df.to_csv(csv_file, index=False)
+    
+    # Fungsi untuk menambahkan data ke CSV (append)
+    def save_to_csv(data):
+        # Menambahkan data baru ke file CSV dengan mode append
+        data.to_csv(csv_file, mode='a', header=False, index=False)
+    
+    # Judul dan form input
+    st.title("Form Pemilihan Kursi Duduk")
+    
+    # Input nama
+    nama = st.text_input("Nama:")
+    
+    # Pilihan kursi duduk
+    kursi_1 = st.text_input("Kursi Duduk Pilihan 1:")
+    kursi_2 = st.text_input("Kursi Duduk Pilihan 2:")
+    kursi_3 = st.text_input("Kursi Duduk Pilihan 3:")
+    kursi_4 = st.text_input("Kursi Duduk Pilihan 4:")
+    kursi_5 = st.text_input("Kursi Duduk Pilihan 5:")
+    
+    # Tombol untuk menyimpan data
+    if st.button("Simpan"):
+        if nama and kursi_1 and kursi_2 and kursi_3 and kursi_4 and kursi_5:
+            # Data yang akan disimpan dalam format DataFrame
+            new_data = pd.DataFrame([{
+                "Nama": nama,
+                "Kursi Pilihan 1": kursi_1,
+                "Kursi Pilihan 2": kursi_2,
+                "Kursi Pilihan 3": kursi_3,
+                "Kursi Pilihan 4": kursi_4,
+                "Kursi Pilihan 5": kursi_5
+            }])
+    
+            # Menyimpan data ke CSV
+            save_to_csv(new_data)
+            st.success("Data berhasil disimpan!")
+        else:
+            st.error("Semua kolom harus diisi!")
     
         
+            
