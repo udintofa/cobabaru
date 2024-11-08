@@ -168,34 +168,7 @@ with tab4:
     # Menggunakan reset_index dan mulai indeks dari 1
     dd = dd.reset_index(drop=True)  # Reset index terlebih dahulu
     dd.index = dd.index + 1         # Mengubah index menjadi mulai dari 1
-    st.write(dd)
-    
-    st.subheader("Playlist Perjalanan")
-    with st.expander("Silahkan Usul Playlist Sementara"):
-        # Input Nama
-        judul_lagu = st.text_input("Judul Lagu (wajib diisi):")
-        penyanyi = st.text_input("Penyanyi (wajib diisi):")
-        pengusul = st.text_input("Siapa pengusulnya ini?")
-        
-        # Tombol untuk menyimpan data
-        if st.button("Kirim"):
-            if judul_lagu and penyanyi and pengusul:
-                # Zona waktu Indonesia (WIB)
-                tz = pytz.timezone("Asia/Jakarta")
-                # Ambil timestamp saat ini
-                timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-                new_data = [timestamp, judul_lagu, penyanyi, pengusul]
-                save_to_google_sheets2(new_data)
-                st.success("Data berhasil disimpan. Ingat!! ada yg bilang kalau musik itu haram, maka pilihlah murotal")
-            else:
-                st.error("Semua wajib diisi")
-        st.write("List Usulan Sementara")
-        # Tombol refresh data tanpa st.experimental_rerun
-        if st.button("Refresh"):
-            st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
-        st.dataframe(data4)
-        
-        
+    st.write(dd)        
 
 
 with tab2:
@@ -256,6 +229,32 @@ with tab1:
     st.subheader(":bus: Penomoran Kursi Bus")
     with st.expander("Penomoran Kursi"):
         st.image("seatbusnama.jpg", caption="Penomoran Kursi Bus")
+
+
+    st.subheader("Playlist Perjalanan")
+    with st.expander("Silahkan Usul Playlist Sementara"):
+        # Input Nama
+        judul_lagu = st.text_input("Judul Lagu (wajib diisi):")
+        penyanyi = st.text_input("Penyanyi (wajib diisi):")
+        pengusul = st.text_input("Siapa pengusulnya ini?")
+        
+        # Tombol untuk menyimpan data
+        if st.button("Kirim"):
+            if judul_lagu and penyanyi and pengusul:
+                # Zona waktu Indonesia (WIB)
+                tz = pytz.timezone("Asia/Jakarta")
+                # Ambil timestamp saat ini
+                timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+                new_data = [timestamp, judul_lagu, penyanyi, pengusul]
+                save_to_google_sheets2(new_data)
+                st.success("Data berhasil disimpan. Ingat!! ada yg bilang kalau musik itu haram, maka pilihlah murotal")
+            else:
+                st.error("Semua wajib diisi")
+        st.write("List Usulan Sementara")
+        # Tombol refresh data tanpa st.experimental_rerun
+        if st.button("Refresh"):
+            st.cache_data.clear()  # Menghapus cache agar data terbaru dimuat
+        st.dataframe(data4)
 
     
     # st.subheader(":fire: War Seat Bus:fire:")
