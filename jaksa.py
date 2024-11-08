@@ -258,36 +258,36 @@ with tab1:
         st.image("SeatBus.png", caption="Penomoran Kursi Bus")
 
     
-    st.subheader(":fire: War Seat Bus:fire:")
-    # Judul dan form input
-    st.write("Form Pemilihan Kursi Duduk")
-    with st.expander("WAR SEKARANGGG:fire::fire::fire:"):
-        sm_siapa = ""
-        kenapa = ""
+    # st.subheader(":fire: War Seat Bus:fire:")
+    # # Judul dan form input
+    # st.write("Form Pemilihan Kursi Duduk")
+    # with st.expander("WAR SEKARANGGG:fire::fire::fire:"):
+    #     sm_siapa = ""
+    #     kenapa = ""
 
-        # Input Nama
-        nama = st.text_input("Nama (wajib diisi):")
-        # Input Pilihan Kursi Duduk
-        kursi_1 = st.selectbox("Kursi Duduk Pilihan 1 (wajib diisi)", [i for i in range(51)])
-        kursi_2 = st.selectbox("Kursi Duduk Pilihan 2 (wajib diisi)", [i for i in range(51)])
-        kursi_3 = st.selectbox("Kursi Duduk Pilihan 3 (wajib diisi)", [i for i in range(51)])
-        kursi_4 = st.selectbox("Kursi Duduk Pilihan 4 (wajib diisi)", [i for i in range(51)])
-        kursi_5 = st.selectbox("Kursi Duduk Pilihan 5 (wajib diisi)", [i for i in range(51)])
-        jejer = st.radio("Apakah kamu harus bersebelahan sm temenmu? (wajib diisi)", ["Iya", "Sama siapa aja juga gapapa"])
-        sm_siapa = st.text_input("Sama siapa? (Jika pilih Iya di pertanyaan sebelumnya):")
-        kenapa = st.text_input("Kenapa harus sm dia? (Jika pilih Iya di pertanyaan sebelumnya)")
+    #     # Input Nama
+    #     nama = st.text_input("Nama (wajib diisi):")
+    #     # Input Pilihan Kursi Duduk
+    #     kursi_1 = st.selectbox("Kursi Duduk Pilihan 1 (wajib diisi)", [i for i in range(51)])
+    #     kursi_2 = st.selectbox("Kursi Duduk Pilihan 2 (wajib diisi)", [i for i in range(51)])
+    #     kursi_3 = st.selectbox("Kursi Duduk Pilihan 3 (wajib diisi)", [i for i in range(51)])
+    #     kursi_4 = st.selectbox("Kursi Duduk Pilihan 4 (wajib diisi)", [i for i in range(51)])
+    #     kursi_5 = st.selectbox("Kursi Duduk Pilihan 5 (wajib diisi)", [i for i in range(51)])
+    #     jejer = st.radio("Apakah kamu harus bersebelahan sm temenmu? (wajib diisi)", ["Iya", "Sama siapa aja juga gapapa"])
+    #     sm_siapa = st.text_input("Sama siapa? (Jika pilih Iya di pertanyaan sebelumnya):")
+    #     kenapa = st.text_input("Kenapa harus sm dia? (Jika pilih Iya di pertanyaan sebelumnya)")
         
-        # Tombol untuk menyimpan data
-        if st.button("Simpan"):
-            if nama and kursi_1 and kursi_2 and kursi_3 and kursi_4 and kursi_5 and jejer:
-                # Zona waktu Indonesia (WIB)
-                tz = pytz.timezone("Asia/Jakarta")
-                # Ambil timestamp saat ini
-                timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-                new_data = [timestamp, nama, kursi_1, kursi_2, kursi_3, kursi_4, kursi_5, jejer, sm_siapa, kenapa]
-                save_to_google_sheets(new_data)
-                st.success("Data berhasil disimpan, Semoga mendapatkan tempat duduk terbaik yaa. Maaf kalau panitia banyak salah!")
-            else:
-                st.error("Kolom wajib harus diisi!")
+    #     # Tombol untuk menyimpan data
+    #     if st.button("Simpan"):
+    #         if nama and kursi_1 and kursi_2 and kursi_3 and kursi_4 and kursi_5 and jejer:
+    #             # Zona waktu Indonesia (WIB)
+    #             tz = pytz.timezone("Asia/Jakarta")
+    #             # Ambil timestamp saat ini
+    #             timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+    #             new_data = [timestamp, nama, kursi_1, kursi_2, kursi_3, kursi_4, kursi_5, jejer, sm_siapa, kenapa]
+    #             save_to_google_sheets(new_data)
+    #             st.success("Data berhasil disimpan, Semoga mendapatkan tempat duduk terbaik yaa. Maaf kalau panitia banyak salah!")
+    #         else:
+    #             st.error("Kolom wajib harus diisi!")
 
     
